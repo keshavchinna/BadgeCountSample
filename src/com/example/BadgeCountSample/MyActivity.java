@@ -8,8 +8,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MyActivity extends Activity {
-    TextView tv;
-    String counts;
+    TextView tv, tv1;
+    String counts, sampleCount;
 
     /**
      * Called when the activity is first created.
@@ -31,11 +31,15 @@ public class MyActivity extends Activity {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu, menu);
         RelativeLayout badgeLayout = (RelativeLayout) menu.findItem(R.id.badge).getActionView();
+        RelativeLayout badgeLayout1 = (RelativeLayout) menu.findItem(R.id.badge1).getActionView();
         tv = (TextView) badgeLayout.findViewById(R.id.textOne);
+        tv1 = (TextView) badgeLayout1.findViewById(R.id.textTwo);
         tv.setText(counts);
+        tv1.setText(sampleCount);
     }
 
     public void applyCounts() {
         counts = "25";
+        sampleCount = "50";
     }
 }
