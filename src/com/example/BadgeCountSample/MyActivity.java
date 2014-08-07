@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class MyActivity extends Activity {
     TextView tv;
+    String counts;
 
     /**
      * Called when the activity is first created.
@@ -17,6 +18,7 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        applyCounts();
     }
 
     @Override
@@ -28,9 +30,12 @@ public class MyActivity extends Activity {
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu, menu);
-
         RelativeLayout badgeLayout = (RelativeLayout) menu.findItem(R.id.badge).getActionView();
         tv = (TextView) badgeLayout.findViewById(R.id.textOne);
-        tv.setText("12");
+        tv.setText(counts);
+    }
+
+    public void applyCounts() {
+        counts = "25";
     }
 }
